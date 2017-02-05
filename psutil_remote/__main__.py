@@ -2,9 +2,7 @@ import sys
 import logging
 
 from psutil_remote_server_protocol import PsutilRemoteServerProtocol
-
-from autobahn.twisted.websocket import WebSocketServerFactory
-
+from psutil_remote_server_factory import PsutilRemoteServerFactory
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -24,7 +22,7 @@ def main(args=None):
     logger.info("Initializing..")
     from twisted.internet import reactor
 
-    factory = WebSocketServerFactory(u"ws://127.0.0.1:9000")
+    factory = PsutilRemoteServerFactory(u"ws://127.0.0.1:9000")
     factory.protocol = PsutilRemoteServerProtocol
     # factory.setProtocolOptions(maxConnections=2)
 
