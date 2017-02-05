@@ -7,7 +7,7 @@ from setuptools import setup
 execfile(os.path.join("psutil_remote", "version.py"))
 
 setup(name='psutil-remote',
-      version=__version__,
+      version=__version__,  # flake8: noqa F821
       description='A WebSockets wrapper around Python psutil',
       author='Jordan Heemskerk',
       author_email='jordanh@shaw.ca',
@@ -18,4 +18,4 @@ setup(name='psutil-remote',
               'psutil-remote = psutil_remote.__main__:main'
           ]
       },
-     )
+)
