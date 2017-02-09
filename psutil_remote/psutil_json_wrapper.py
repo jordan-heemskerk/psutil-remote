@@ -8,7 +8,7 @@ class PsutilJsonWrapper(object):
         encoded = {}
         encoded['users'] = psutil.users()
         encoded['meminfo'] = psutil.virtual_memory()
-        encoded['cpuinfo'] = psutil.cpu_times_percent()
+        encoded['cpuinfo'] = psutil.cpu_percent(percpu=True)
         encoded['processes'] = [proc.as_dict(['name'])
                                 for proc in psutil.process_iter()]
 
